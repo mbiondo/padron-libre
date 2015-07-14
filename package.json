@@ -34,12 +34,17 @@
     "ember-data": "1.0.0-beta.18",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
+    "ember-cli-sass": "4.0.0-beta.6",
+    "ember-cli-font-awesome": "0.0.9",
+    "liquid-fire": "0.19.3",
+    "ember-cli-sass": "4.0.0-beta.6",
     "nw": "0.12.2"
   },
   "main": "dist/index.html",
   "window": {
-    "width": 960,
-    "height": 600
+    "width": 600,
+    "toolbar": false,
+    "height": 500
   },
   "dependencies": {
     "nedb": "^1.1.2"

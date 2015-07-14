@@ -1,19 +1,48 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<header>
+	<div class="logo">
+		<img src="assets/images/logo-fpv.svg" alt="">
+	</div>
+	
+	<span>
+		Consultá tu padrón
+	</span>
 
-{{input type='text' value=document}}
-<a {{action 'find'}}>Buscar</a>
-<a {{action 'clear'}}>Borrar</a>
+	<a {{action 'close'}} class="close-app">
+		{{fa-icon 'times'}}
+	</a>
 
-{{#if afiliated}}
-	<div>
-		<div>Documento: {{afiliated.matricula}}</div>
-		<div>Nombre completo: {{afiliated.apellido}}, {{afiliated.nombre}}</div>
-		<div>Direccion: {{afiliated.domicilio}}</div>
-		<div>Sexo: {{afiliated.sexo}}</div>
+</header>
+
+<div class="search-container">
+	<div class="searcher">
+		{{input type='text' value=document placeholder="Ingrese el DNI a buscar"}}
+		
+	</div>
+
+	<div class="actions">
+		<a {{action 'find'}}>Buscar</a>
+	</div>
+</div>
+<div class="search-results">
+	{{#if afiliated}}
+<a {{action 'clear'}} class="clear-search">{{fa-icon 'fa-times-circle-o'}}</a>
+
+	<div class="person-data">
+		<h3 class="name">{{afiliated.apellido}}, {{afiliated.nombre}}</h3>
+		<h4 class="document">{{afiliated.matricula}}</h4>
+		<p class="address">{{afiliated.domicilio}}</p>
 	</div>		
-	<div>
-		<h4>Vota en</h4>
-		<div>Escuela: {{afiliated.nombre_de_la_escuela}}, {{afiliated.domicilio_escuela}}</div>
-		<div>Mesa: {{afiliated.mesa}}</div>
-	</div>	
-{{/if}}
+	<div class="location">
+		<h4>Usted vota en la {{afiliated.nombre_de_la_escuela}} </h4>
+		<p>{{afiliated.domicilio_escuela}}</p>
+		<p>Mesa {{afiliated.mesa}}</p>
+	</div>
+	{{else}}	
+	<div class="no-result">
+		{{fa-icon 'search'}}
+	</div>
+	{{/if}}
+</div>
+
+
+	
