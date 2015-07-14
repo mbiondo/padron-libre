@@ -1,3 +1,19 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
-{{outlet}}
+{{input type='text' value=document}}
+<a {{action 'find'}}>Buscar</a>
+<a {{action 'clear'}}>Borrar</a>
+
+{{#if afiliated}}
+	<div>
+		<div>Documento: {{afiliated.matricula}}</div>
+		<div>Nombre completo: {{afiliated.apellido}}, {{afiliated.nombre}}</div>
+		<div>Direccion: {{afiliated.domicilio}}</div>
+		<div>Sexo: {{afiliated.sexo}}</div>
+	</div>		
+	<div>
+		<h4>Vota en</h4>
+		<div>Escuela: {{afiliated.nombre_de_la_escuela}}, {{afiliated.domicilio_escuela}}</div>
+		<div>Mesa: {{afiliated.mesa}}</div>
+	</div>	
+{{/if}}
